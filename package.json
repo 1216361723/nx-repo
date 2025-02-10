@@ -1,0 +1,37 @@
+{
+  "name": "ui-library-template",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "docs"
+  ],
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r run dev",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "build:nx": "nx next:build",
+    "lint:nx": "nx eslint:lint",
+    "test:nx": "nx exec -- node ./run-tests.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "lerna": "^8.1.9",
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "nx": {
+    "targets": {
+      "test": {
+        "cache": "true",
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "outputs": []
+      }
+    }
+  }
+}
